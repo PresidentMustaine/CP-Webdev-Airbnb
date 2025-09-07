@@ -1,0 +1,271 @@
+:root {
+  --bg: #ffc57a;
+  --texto: #222222;
+  --muted: #555555;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --border-strong: #d0d7de;
+  --primary: #2f6feb;
+  --primary-hover: #255ad6;
+  --accent-warn: #fff8e1;  
+  --accent-warn-border: #f3d27a;
+  --accent-edit: #e7f0ff; 
+  --accent-edit-border: #b8d0ff;
+  --accent-del: #ffe7e7;
+  --accent-del-border: #ffbcbc;
+  --radius: 8px;
+  --shadow: 0 1px 2px rgba(72, 115, 225, 0.867);
+  --space: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--texto);
+  padding: 20px;
+}
+
+header {
+  max-width: 1000px;
+  margin: 0 auto 16px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.header_acoes {
+  display: grid;
+  grid-template-columns: 1fr repeat(3, max-content) max-content;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.header_acoes input[type="text"],
+.header_acoes select,
+.header_acoes button {
+  height: 38px;
+  padding: 0 10px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  font-size: 14px;
+  background: #ffffff;
+}
+
+.header_acoes input[type="text"] {
+  min-width: 240px;
+}
+
+.header_acoes select {
+  min-width: 150px;
+}
+
+.header_acoes button {
+  cursor: pointer;
+  background: var(--primary);
+  color: #ffffff;
+  border: 1px solid #2a62cf;
+}
+
+.header_acoes button:hover {
+  background: var(--primary-hover);
+}
+
+#ordenarNome::after {
+  content: 'Ordenar por Nome';
+}
+
+#ordenarPosicao::after {
+  content: 'Ordenar por Posição';
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;    
+  object-fit: contain;  
+  display: block;
+  background: #fff;
+}
+
+.card-content {
+  padding: 10px;
+}
+
+.card-content h3 {
+  font-size: 16px;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.card-content p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.stats {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.stat-pill {
+  background: #f1f3f5;
+  border: 1px solid #e6e9ec;
+  padding: 2px 6px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.card-acoes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  padding: 10px;
+  border-top: 1px solid #eeeeee;
+}
+
+.card-acoes button {
+  height: 32px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.btn-favorita {
+  background: var(--accent-warn);
+  border-color: var(--accent-warn-border);
+}
+
+.btn-editar {
+  background: var(--accent-edit);
+  border-color: var(--accent-edit-border);
+}
+
+.btn-excluir {
+  background: var(--accent-del);
+  border-color: var(--accent-del-border);
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 16px;
+}
+
+.modal.oculto {
+  display: none;
+}
+
+/* Formulario */
+#formJogadora {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  display: grid;
+  gap: 8px;
+}
+
+#tituloForm {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+#formJogadora input {
+  height: 36px;
+  padding: 0 10px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  font-size: 14px;
+}
+
+#formJogadora input:focus {
+  outline: 2px solid #bcd1ff;
+  border-color: var(--primary);
+}
+
+#formJogadora button {
+  height: 38px;
+  border-radius: var(--radius);
+  border: 1px solid #2a62cf;
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#formJogadora button:hover {
+  background: var(--primary-hover);
+}
+
+#cancelar {
+  background: #6b7280;
+  border-color: #606770;
+}
+
+#cancelar:hover {
+  background: #565d64;
+}
+
+/* focus */
+.header_acoes button:focus,
+#formJogadora button:focus {
+  outline: 2px solid #bcd1ff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 560px) {
+  body {
+    padding: 16px;
+  }
+
+  .header_acoes {
+    grid-template-columns: 1fr;
+  }
+
+  .header_acoes input[type="text"],
+  .header_acoes select,
+  .header_acoes button {
+    width: 100%;
+  }
+}
